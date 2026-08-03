@@ -1,0 +1,93 @@
+% ============================================================
+% 論文本体
+% ============================================================
+% クラスファイルは同梱の simplepaper.cls です．
+%
+%   \documentclass{simplepaper}              A4，10pt，2段組（既定）
+%   \documentclass[onecolumn]{simplepaper}   1段組（卒論・修論の下書き向け）
+%   \documentclass[linenumber]{simplepaper}  行番号つき（添削してもらうとき）
+%   \documentclass[onecolumn,linenumber]{simplepaper}  併用も可
+%
+% コンパイルは latexmk を実行するだけです（platex + dvipdfmx）．
+% ============================================================
+
+\documentclass[linenumber]{simplepaper}
+
+\usepackage{amsmath}          % 数式
+\usepackage{graphicx}         % 画像を挿入できるようにする
+\usepackage{wrapfig}          % 図の回り込みを許す
+\usepackage{xcolor}           % 文字に色をつけられるようにする
+\usepackage{colortbl}         % 表に色をつけられるようにする
+\usepackage{booktabs}         % 表に横罫線をつけられるようにする
+\usepackage{multirow}         % 複雑な表を書けるようにする
+\usepackage{ascmac}           % 枠をつけた文を書けるようにする
+\usepackage{latexsym}         % 扱える数学記号を追加
+\usepackage{bm}               % ベクトル表記を扱えるようにする
+\usepackage{array}            % 数式モードで表（や行列）を書けるようにする
+\usepackage[hidelinks]{hyperref}  % URLをハイパーリンク化する（枠線は出さない）
+\usepackage{pxjahyper}        % ハイパーリンクの日本語問題を解決する
+
+
+\begin{document}
+
+% ----------------------------
+% 表題まわり
+% ----------------------------
+% \affiliation（所属）と \email は任意です．不要なら行ごと消してください．
+% 著者が複数いる場合は \and で区切ります．
+\title{論文のタイトル}
+\author{山畑 滝子}
+\affiliation{名古屋市立大学 データサイエンス学部}
+\email{yamabata@ed.nagoya-cu.ac.jp}
+
+% ----------------------------
+% アブストラクト（300〜500字程度）
+% ----------------------------
+\begin{abstract}
+\input{section/abstract}
+\end{abstract}
+
+% ----------------------------
+% 研究のキーワード
+% 5つ程度のキーワードをカンマ（，）で区切る
+% ----------------------------
+\keyword{情報検索，意思決定支援，生成AI}
+
+\maketitle
+
+
+% ------------------------------
+% メインコンテンツ
+% ------------------------------
+
+% 1章：はじめに
+\input{section/introduction}
+
+% 2章：関連研究
+\input{section/related-works}
+
+% 3章：提案手法
+\input{section/approach}
+
+% 4章：実験
+\input{section/experiment}
+
+% 5章：結果
+\input{section/results}
+
+% 6章：考察
+\input{section/discussion}
+
+% 7章：おわりに
+\input{section/conclusion}
+
+
+% -------------------------
+% 参考文献リスト
+% -------------------------
+% reference.bib に文献情報を書き，本文中で \cite{ラベル} を使って参照します．
+\bibliography{reference}
+\bibliographystyle{ipsjsort}
+
+
+\end{document}

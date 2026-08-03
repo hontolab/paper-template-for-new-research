@@ -1,0 +1,102 @@
+
+\documentclass[submit,autodetect-engine,dvipdfmx,platex]{ipsj-mod}
+
+\usepackage{amsmath}
+\usepackage{graphicx}       % 画像を挿入できるようにする
+\usepackage{wrapfig}        % 図の回り込みを許す
+\usepackage{lineno}         % 行番号をつける
+\usepackage{xcolor}         % 文字に色をつけられるようにする
+\usepackage{colortbl}       % 表に色をつけられるようにする
+\usepackage{booktabs}       % 表に横罫線をつけられるようにする
+\usepackage{multirow}       % 複雑な表を書けるようにする
+\usepackage{ascmac}         % 枠をつけた文を書けるようにする
+\usepackage{latexsym}       % 扱える数学記号を追加
+\usepackage{bm}             % ベクトル表記を扱えるようにする
+\usepackage{array}          % 数式モードで表（や行列）を書けるようにする
+\usepackage{hyperref}       % URLをハイパーリンク化する
+\usepackage{pxjahyper}      % URLのハイパーリンク化した際の日本語問題を解決する
+\usepackage{ccicons}        % クリエイティブ・コモンズ・ライセンスのマークをつけられるようにする
+\usepackage[utf8]{inputenc} % for a UTF8 editor only
+%\usepackage{microtype}      % Improved Tracking and Kerning
+
+% hyperrefが\cite番号をリンク化するとipsjクラスの引用番号ソート処理と衝突するため、
+% \bibciteを標準の定義（番号のみを保存）に戻す。URLや\hrefのリンクは従来どおり有効。
+\makeatletter
+\def\bibcite#1#2{\@newl@bel{b}{#1}{#2}}
+\makeatother
+
+\def\Underline{\setbox0\hbox\bgroup\let\\\endUnderline}
+\def\endUnderline{\vphantom{y}\egroup\smash{\underline{\box0}}\\}
+\def\|{\verb|}
+
+\begin{document}
+
+
+% ----------------------------
+% 論文のタイトル
+% ----------------------------
+\title{論文のタイトル}
+
+% ----------------------------
+% 著者の情報
+% ----------------------------
+\author{山畑 滝子}{Takiko Yamabata}{NCU}[yamabata@ed.nagoya-cu.ac.jp]
+\affiliate{NCU}{名古屋市立大学 データサイエンス学部}
+
+
+
+% ----------------------------
+% アブストラクト（300〜500字程度）
+% ----------------------------
+\begin{abstract}
+\input{section/abstract}
+\end{abstract}
+
+% ----------------------------
+% 研究のキーワード
+% 5つ程度のキーワードをカンマ（，）で区切る
+% ----------------------------
+\begin{jkeyword}
+情報検索，意思決定支援，生成AI
+\end{jkeyword}
+
+
+\maketitle
+
+
+% ------------------------------
+% メインコンテンツ
+% ------------------------------
+
+% 1章：はじめに
+\input{section/introduction}
+
+% 2章：関連研究
+\input{section/related-works}
+
+% 3章：提案手法
+\input{section/approach}
+
+% 4章：実験
+\input{section/experiment}
+
+% 5章：結果
+\input{section/results}
+
+% 6章：考察
+\input{section/discussion}
+
+% 7章：おわりに
+\input{section/conclusion}
+
+
+
+% -------------------------
+% 参考文献リスト
+% -------------------------
+\markboth{参考文献}{参考文献}
+\bibliography{reference}
+\bibliographystyle{ipsjsort}
+
+
+\end{document}
