@@ -6,48 +6,38 @@
 % コンパイル方法： latexmk how-to-use-latex.tex
 % ============================================================
 
-\documentclass[submit,autodetect-engine,dvipdfmx,platex]{ipsj-mod}
+\documentclass{simplepaper}
 
-\usepackage{amsmath}
-\usepackage{graphicx}       % 画像を挿入できるようにする
-\usepackage{wrapfig}        % 図の回り込みを許す
-\usepackage{xcolor}         % 文字に色をつけられるようにする
-\usepackage{colortbl}       % 表に色をつけられるようにする
-\usepackage{booktabs}       % 表に横罫線をつけられるようにする
-\usepackage{multirow}       % 複雑な表を書けるようにする
-\usepackage{ascmac}         % 枠をつけた文を書けるようにする
-\usepackage{latexsym}       % 扱える数学記号を追加
-\usepackage{bm}             % ベクトル表記を扱えるようにする
-\usepackage{array}          % 数式モードで表（や行列）を書けるようにする
-\usepackage{hyperref}       % URLをハイパーリンク化する
-\usepackage{pxjahyper}      % URLのハイパーリンク化した際の日本語問題を解決する
-\usepackage[utf8]{inputenc} % for a UTF8 editor only
-
-% hyperrefが\cite番号をリンク化するとipsjクラスの引用番号ソート処理と衝突するため，
-% \bibciteを標準の定義（番号のみを保存）に戻す．URLや\hrefのリンクは従来どおり有効．
-\makeatletter
-\def\bibcite#1#2{\@newl@bel{b}{#1}{#2}}
-\makeatother
+\usepackage{amsmath}          % 数式
+\usepackage{graphicx}         % 画像を挿入できるようにする
+\usepackage{wrapfig}          % 図の回り込みを許す
+\usepackage{xcolor}           % 文字に色をつけられるようにする
+\usepackage{colortbl}         % 表に色をつけられるようにする
+\usepackage{booktabs}         % 表に横罫線をつけられるようにする
+\usepackage{multirow}         % 複雑な表を書けるようにする
+\usepackage{ascmac}           % 枠をつけた文を書けるようにする
+\usepackage{latexsym}         % 扱える数学記号を追加
+\usepackage{bm}               % ベクトル表記を扱えるようにする
+\usepackage{array}            % 数式モードで表（や行列）を書けるようにする
+\usepackage[hidelinks]{hyperref}  % URLをハイパーリンク化する（枠線は出さない）
+\usepackage{pxjahyper}        % ハイパーリンクの日本語問題を解決する
 
 
 \begin{document}
 
 \title{LaTeXの使い方}
-
-\author{論文執筆テンプレート 付属資料}{Supplement to the Paper Template}{NCU}
-\affiliate{NCU}{名古屋市立大学 データサイエンス学部}
+\author{論文執筆テンプレート 付属資料}
+\affiliation{名古屋市立大学 データサイエンス学部}
 
 \begin{abstract}
 本稿は，初めて論文を執筆する学生に向けて，LaTeXの基本的な書き方を解説した資料である．
 見出し，段落，書体，箇条書き，図，表，参考文献の引用といった，論文執筆で最低限必要になる項目を扱う．
-本稿自体が論文執筆テンプレートと同じスタイルファイルを用いて組版されているため，
+本稿自体が論文執筆テンプレートと同じクラスファイル（simplepaper.cls）を用いて組版されているため，
 本稿のPDFと\texttt{how-to-use-latex.tex}のソースを見比べることで，
 「どう書けば，どう組み上がるのか」を確認できる．
 \end{abstract}
 
-\begin{jkeyword}
-LaTeX，論文執筆，BiBTeX
-\end{jkeyword}
+\keyword{LaTeX，論文執筆，BiBTeX}
 
 \maketitle
 
@@ -58,11 +48,11 @@ LaTeXは内容とスタイル（見た目）を切り分けて文書を編集す
 コマンドを駆使して，美しい文書を作成することができます．
 
 本稿を読むときは，このPDFと，同じフォルダにある\texttt{how-to-use-latex.tex}を並べて開いてください．
-本稿は論文執筆テンプレートと同じスタイルファイルで組版されていますので，
+本稿は論文執筆テンプレートと同じクラスファイル（simplepaper.cls）で組版されていますので，
 「ソースにこう書くと，論文ではこう出力される」という対応をそのまま確認できます．
 
 なお，LaTeXの環境の準備やテンプレートのファイル構成については，
-1つ上のフォルダにある\texttt{README.md}を参照してください．
+リポジトリ直下にある\texttt{README.md}を参照してください．
 また，LaTeXの使い方については様々な書籍，ウェブサイトが解説を行っています．
 より詳しい使い方についてはそちらを参考にしてください．
 

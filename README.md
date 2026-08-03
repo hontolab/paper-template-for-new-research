@@ -60,6 +60,12 @@
 * [3-国際会議論文の傾向と対策](how-to-xx/how-to-write-a-paper/3-国際会議論文の傾向と対策.md)
   CHI・CSCW・UIST・IUI・CHIIR・SIGIRの評価文化と，会議ごとに求められるもの．国際会議への投稿を考える段階になったら読んでください．
 
+※1 論文を書き終えたら，以下のリンク先にあるチェックリストを使って内容をチェックしてください．
+* [論文執筆のためのチェックリスト](https://gist.github.com/trycycle/5223909fba402c86ceb603ee65ee0926)
+
+※2 テンプレートの超簡易版（Googleドキュメント）は[コチラ](https://docs.google.com/document/d/1iu-5G760joL17eHILx8pPi_3yMjdd51fWAdaJuA6OTk/edit?usp=sharing)からアクセスできます．まずは超簡易版を使って箇条書きメモを作っても良いかもしれません．
+
+
 ### 論文執筆環境（LaTeX）の使い方
 * [how-to-xx/how-to-use-this-template.md](how-to-xx/how-to-use-this-template.md)
   本テンプレートの使い方と執筆環境（Overleaf / ローカル）の準備方法．**論文を書き始める前に読んでください．**
@@ -82,9 +88,6 @@ section/            各章の原稿
 fig/                図
 reference.bib       参考文献データベース
 how-to-xx/          論文の書き方・LaTeXの使い方の参考資料
-
-paper-ipsj.tex      情報処理学会スタイルで書きたいとき用
-ipsj-mod.cls        情報処理学会スタイルファイル（paper-ipsj.tex 専用）
 ```
 
 ### クラスファイルのオプション

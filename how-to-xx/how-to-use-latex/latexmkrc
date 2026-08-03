@@ -1,7 +1,7 @@
 # このフォルダの中で latexmk を実行するための設定
 #
-# スタイルファイル（ipsj-mod.cls）と参考文献の整形ルール（ipsjsort.bst）は
-# 1つ上のフォルダにあるものを共用する。コピーを置くと、論文本体側と
+# クラスファイル（simplepaper.cls）と参考文献の整形ルール（ipsjsort.bst）は
+# リポジトリ直下にあるものを共用する。コピーを置くと、論文本体側と
 # 内容がずれてしまうため。
 
 $latex = 'platex';
@@ -10,7 +10,7 @@ $dvipdf = 'dvipdfmx %O -o %D %S';
 $makeindex = 'mendex %O -o %D %S';
 $pdf_mode = 3;
 
-# 1つ上のフォルダも探索対象に加える（末尾の : は「標準の探索パスも使う」の意味）
-$ENV{TEXINPUTS} = '..:' . ($ENV{TEXINPUTS} // '');
-$ENV{BSTINPUTS} = '..:' . ($ENV{BSTINPUTS} // '');
-$ENV{BIBINPUTS} = '..:' . ($ENV{BIBINPUTS} // '');
+# リポジトリ直下も探索対象に加える（末尾の : は「標準の探索パスも使う」の意味）
+$ENV{TEXINPUTS} = '../..:' . ($ENV{TEXINPUTS} // '');
+$ENV{BSTINPUTS} = '../..:' . ($ENV{BSTINPUTS} // '');
+$ENV{BIBINPUTS} = '../..:' . ($ENV{BIBINPUTS} // '');
